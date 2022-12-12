@@ -22,7 +22,7 @@ export const Login = () =>{
     }
     
     const onSubmit = () => {
-        axios.post('http://54.227.225.13/auth/login',body)
+        axios.post('https://54.227.225.13/auth/login',body)
         .then(data => seToken(data.data.token))
         .catch(response=> console.log(response));
         validate()
