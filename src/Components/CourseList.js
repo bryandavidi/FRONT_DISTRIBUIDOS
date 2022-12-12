@@ -19,7 +19,7 @@ function courseList() {
 
     useEffect(()=>{
         const getCourse = async() => {
-            const response = await axios.get('https://54.227.225.13/materias/todas',config)
+            const response = await axios.get('http://54.227.225.13/materias/todas',config)
             setCourses(response.data)
         }
         getCourse()
@@ -43,7 +43,7 @@ function courseList() {
         var option = window.confirm('Esta seguro que desea eliminar la materia seleccionada');
         if(option){
             setCourses(results.filter( data=> data.id_materia !== id))
-            await axios.delete('https://54.227.225.13/materias/eliminar',{headers: config.headers , data :{id_materia : id}})
+            await axios.delete('http://54.227.225.13/materias/eliminar',{headers: config.headers , data :{id_materia : id}})
                 .then(() => {
                 alert("Materia eliminada!");
               });

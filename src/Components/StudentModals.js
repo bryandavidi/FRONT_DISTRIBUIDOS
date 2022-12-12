@@ -37,7 +37,7 @@ function StudentModals() {
     formData.append('apellidos' , apellidos)
     formData.append('estado' , estado)
 
-    await axios.post('https://54.227.225.13/estudiantes/crear',formData,config)
+    await axios.post('http://54.227.225.13/estudiantes/crear',formData,config)
     .then(() => {
       alert("Estudiante Creado!");
     });

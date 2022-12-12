@@ -32,7 +32,7 @@ function studentList(){
 
     useEffect( () => {
         const getstudent = async() => {
-            const response= await axios.get('https://54.227.225.13/estudiantes/todos',config)
+            const response= await axios.get('http://54.227.225.13/estudiantes/todos',config)
             setStudent(response.data)
         }
         getstudent()
@@ -56,7 +56,7 @@ function studentList(){
         var option = window.confirm('Esta seguro que desea eliminar el estudiante seleccionado');
         if(option){
             setStudent(results.filter( data=> data.id_estudiante !== id))
-            await axios.delete('https://54.227.225.13/estudiantes/eliminar',{headers: config.headers , data :{id_estudiante : id , container: 'imagenesira'}})
+            await axios.delete('http://54.227.225.13/estudiantes/eliminar',{headers: config.headers , data :{id_estudiante : id , container: 'imagenesira'}})
                 .then(() => {
                 alert("Estudiante eliminado!");
               });

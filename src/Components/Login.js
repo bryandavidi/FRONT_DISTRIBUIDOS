@@ -22,7 +22,7 @@ export const Login = () =>{
     }
     
     const onSubmit = () => {
-        axios.post('https://54.227.225.13/auth/login',body)
+        axios.post('http://54.227.225.13/auth/login',body)
         .then(data => seToken(data.data.token))
         .catch(response=> console.log(response));
         validate()
@@ -40,7 +40,7 @@ export const Login = () =>{
         <Container id="main-container" className="d-grid h-100">
             <Form id="sign-in-form" className="text-center p-3 w-100">
                 <img className="mb-4 sesion-logo" 
-                src = "https://cdn-icons-png.flaticon.com/512/929/929422.png"
+                src = "http://cdn-icons-png.flaticon.com/512/929/929422.png"
                 alt= "sesion"
                 />
 
